@@ -15,14 +15,14 @@ for _ in range(total_input):
             elif char=='+' :sign=True
             elif char=='-' :sign=False
             elif char=='(':
-                arr=do(idx,s)
+                nums=do(idx,s)
                 if sign:
-                    maxx+=arr[0]
-                    minn+=arr[1]
+                    maxx+=nums[0]
+                    minn+=nums[1]
                 else:
-                    maxx+=arr[1]
-                    minn+=arr[0]
-                idx=arr[2]
+                    maxx+=nums[1]
+                    minn+=nums[0]
+                idx=nums[2]
             idx+=1
         dic[ini]=maxx
         return [maxx,minn,idx]

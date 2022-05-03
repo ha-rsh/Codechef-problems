@@ -3,14 +3,14 @@ from sys import stdin
 t = int(stdin.readline().rstrip())
 while t > 0:
     n = int(stdin.readline().rstrip())
-    arr = list(map(int, stdin.readline().strip().split(' ')[:n]))
+    nums = list(map(int, stdin.readline().strip().split(' ')[:n]))
     my_dict = {}
     for i in range(n):
-        if arr[i] in my_dict.keys():
-             my_dict[arr[i]] += 1
+        if nums[i] in my_dict.keys():
+             my_dict[nums[i]] += 1
 
         else:
-            my_dict[arr[i]] = 1
+            my_dict[nums[i]] = 1
 
     my_list = []
     f = 0

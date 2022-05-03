@@ -3,16 +3,16 @@ from sys import stdin
 t = int(stdin.readline().rstrip())
 while t > 0:
     n = int(stdin.readline().rstrip())
-    arr = list(map(int, stdin.readline().strip().split(' ')))
+    nums = list(map(int, stdin.readline().strip().split(' ')))
     sum = 0
     mod0 = 0
     mod1 = 0
     mod2 = 0
     for i in range(n):
-        if arr[i] % 3 == 1:
+        if nums[i] % 3 == 1:
             mod1 += 1
 
-        elif arr[i] % 3 == 2:
+        elif nums[i] % 3 == 2:
             mod2 += 1
 
     score = min(mod1, mod2)

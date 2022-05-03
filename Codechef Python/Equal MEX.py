@@ -4,8 +4,8 @@ from collections import Counter
 t = int(stdin.readline().strip())
 while t > 0:
     n = int(stdin.readline().strip())
-    arr = list(map(int,stdin.readline().strip().split(' ')[:2*n]))
-    my_dict = Counter(arr)
+    nums = list(map(int,stdin.readline().strip().split(' ')[:2*n]))
+    my_dict = Counter(nums)
     flag = True
 
     for i in range(2*n):

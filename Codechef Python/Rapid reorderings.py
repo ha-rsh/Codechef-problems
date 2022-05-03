@@ -2,17 +2,17 @@ from sys import stdin
 from collections import Counter
 
 
-def check1(arr):
+def check1(nums):
     new_dict = {}
-    for i in range(len(arr)):
-        temp = arr[:i+1]
+    for i in range(len(nums)):
+        temp = nums[:i+1]
         if len(temp) % 2 == 0:
             value = len(temp) // 2
             value -= 1
-            median = arr[value]
+            median = nums[value]
         else:
             value = len(temp) // 2
-            median = arr[value]
+            median = nums[value]
 
         if median not in new_dict:
             new_dict[median] = 1
@@ -23,10 +23,10 @@ def check1(arr):
     return new_dict
 
 
-def check2(arr):
+def check2(nums):
     new_dict = {}
-    for i in range(len(arr)-1, -1, -1):
-        temp = arr[i:]
+    for i in range(len(nums)-1, -1, -1):
+        temp = nums[i:]
         if len(temp) % 2 == 0:
             value = len(temp) // 2
             value -= 1
@@ -50,11 +50,11 @@ while t > 0:
     b = list(map(int, stdin.readline().strip().split(' ')[:2*n]))
     my_dict = Counter(b)
     s = set(b)
-    arr = list(s)
-    arr.sort()
-    dict1 = check1(arr)
-    dict2 = check2(arr)
-    l1 = [0] * (max(arr) + 1)
+    nums = list(s)
+    nums.sort()
+    dict1 = check1(nums)
+    dict2 = check2(nums)
+    l1 = [0] * (max(nums) + 1)
     for key, item in dict1.items():
         l1[key] += item
 
@@ -71,7 +71,7 @@ while t > 0:
             break
 
     if flag:
-        print(*arr)
+        print(*nums)
 
     else:
         print(-1)

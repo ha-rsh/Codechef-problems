@@ -3,16 +3,16 @@ from sys import stdin
 t = int(stdin.readline().rstrip())
 while t > 0:
     n, m = map(int, stdin.readline().rstrip().split(' '))
-    arr = []
+    nums = []
     for i in range(n):
         s = stdin.readline().strip()
-        arr.append(s)
+        nums.append(s)
 
-    arr.sort(key=lambda i: i.count('1'))
-    arr = ''.join(arr)
+    nums.sort(key=lambda i: i.count('1'))
+    nums = ''.join(nums)
     ones = 0
     inversions = 0
-    for i in arr:
+    for i in nums:
         if i == '1':
             ones += 1
         else:
